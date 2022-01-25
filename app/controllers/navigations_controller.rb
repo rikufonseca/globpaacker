@@ -33,9 +33,9 @@ class NavigationsController < ApplicationController
     ]
     # Filter for weather
     if @navigation.weather == "Rainy" || @navigation.weather == "Windy"
-      @places = Place.all.geocoded.where(:exterior == false)
+      @places = Place.all.geocoded.where(exterior: false)
     else
-      @places = Place.all.geocoded.where(:exterior == true)
+      @places = Place.all.geocoded
     end
 
     # Places qui sont des steps
@@ -105,6 +105,6 @@ class NavigationsController < ApplicationController
 
   def navigation_params
     params.require(:navigation).permit(:user_id, :place_id, :starting_longitude, :starting_latitude, :ending_longitude,
-                                       :ending_latitude, :done, :time_deadline, :date, :ending_address)
+                                       :ending_latitude, :done, :time_deadline, :date, :ending_address, :weather)
   end
 end
