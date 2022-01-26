@@ -47,3 +47,9 @@ a {
    margin: 0;
    display: flex;
 }
+
+.but a {
+  transition: all 100s ease-in-out !important;
+  text-decoration: none !important;
+  // color: grey !important;
+}

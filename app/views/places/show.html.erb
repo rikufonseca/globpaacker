@@ -34,11 +34,11 @@
       </ul>
 
       <% if @step %>
-        <div class="btn btn-secondary trans" id="opbut">
+        <div class="btn btn-secondary trans but" id="opbut">
           <%= link_to "I AM HERE", visit_step_path(@step), method: :patch %>
         </div>
       <% else %>
-        <div class="btn btn-secondary trans" id="opbut">
+        <div class="btn btn-secondary trans but" id="opbut">
           <%= link_to "ADD TO MY ITINERARY", navigation_place_steps_path(@navigation, @place), method: :post %>
         </div>
       <% end %>
