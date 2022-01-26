@@ -1,4 +1,5 @@
 class NavigationsController < ApplicationController
+   skip_before_action :authenticate_user!, only: [:show]
   before_action :set_navigation, only: :show
   def generate_marker_array(places_array, info_window_partial_name = nil)
     return places_array.map do |place|
@@ -92,7 +93,7 @@ class NavigationsController < ApplicationController
     if @navigation.save
       redirect_to navigation_path(@navigation)
     else
-      flash[:notice] = 'Something is missing'
+      flash[:notice] = 'You need to log in to create an itinenary'
       render :new
     end
   end

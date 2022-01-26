@@ -5,7 +5,7 @@
       <p class="dash-card-title">ABOUT YOU</p>
       <div class="dash-card-text">
         <p> Your email: <%= @user.email %> </p>
-        <div class="btn btn-secondary trans"> 
+        <div class="btn btn-secondary trans">
           <%= link_to "update",  new_user_registration_path, :method => :edit %>
         </div>
       </div>
@@ -16,9 +16,9 @@
         <div class="dash-card-text">
           <% if @user.places.empty? %>
             <p> You never created a place yet </p>
-            <%= link_to new_place_path do %>
-              <button class="btn btn-secondary trans but-place"><strong>Create a new Place</strong></button>
-            <% end %>
+              <div class="btn btn-secondary trans">
+                <%= link_to "Create a new Place", new_place_path %>
+              </div>
           <% else %>
             <% @user.places.each do |place| %>
               <% if @user.id == place.user_id %>
@@ -29,11 +29,9 @@
                     <%= place.duration %> | <%= place.exterior? ? "Exterior" : "Interior" %> | <%= place.senses %> | <%= place.interest %> |  Rating: <%= place.rating %>
                   </p>
                   <p> Description: <%= place.description %></p>
-                  <%= link_to place_path(place), method: :delete do %>
-                    <div class="btn btn-secondary trans but-place">
-                      <p id="destroy" > destroy this place </p>
+                    <div class="btn btn-secondary trans" id="destroy">
+                       <%= link_to "destroy this place", place_path(place), method: :delete %>
                     </div>
-                  <% end %>
                 </div>
               <% end %>
             <% end %>

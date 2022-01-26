@@ -17,14 +17,14 @@
       <ul>
         <li><strong>Duration: </strong><%= @place.duration %> minutes | <%= @place.exterior? ? "Exterior" : "Interior" %>
         </li>
-         <li><strong>Senses: </strong> <%= @place.senses.gsub('"', '').gsub('[', '').gsub(']', '') %> 
+         <li><strong>Senses: </strong> <%= @place.senses.gsub('"', '').gsub('[', '').gsub(']', '') %>
          </li>
          <li>
          <strong> Interests: </strong> <%= @place.interest.gsub('"', '').gsub('[', '').gsub(']', '') %>
          </li>
          <li>
-         <strong>Environment: </strong> <%= @place.environment.gsub('"', '').gsub('[', '').gsub(']', '') %> 
-         </li> 
+         <strong>Environment: </strong> <%= @place.environment.gsub('"', '').gsub('[', '').gsub(']', '') %>
+         </li>
          <li>
          <strong>Rating: </strong> <%= @place.rating %> /5
          </li>
@@ -34,13 +34,13 @@
       </ul>
 
       <% if @step %>
-        <%= link_to visit_step_path(@step), method: :patch do %>
-            <button class="btn btn-secondary trans but-place" id="opbut"><strong> I AM HERE </strong></button>
-        <% end %>
+        <div class="btn btn-secondary trans" id="opbut">
+          <%= link_to "I AM HERE", visit_step_path(@step), method: :patch %>
+        </div>
       <% else %>
-         <%= link_to navigation_place_steps_path(@navigation, @place), method: :post do %>
-            <button class="btn btn-secondary trans but-place" id="opbut"><strong> ADD TO MY ITINENARY </strong></button>
-         <% end %>
+        <div class="btn btn-secondary trans" id="opbut">
+          <%= link_to "ADD TO MY ITINERARY", navigation_place_steps_path(@navigation, @place), method: :post %>
+        </div>
       <% end %>
     </div>
   </div>

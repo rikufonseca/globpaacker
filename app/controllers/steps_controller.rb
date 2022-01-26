@@ -1,4 +1,5 @@
 class StepsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:create, :visit]
 
   def create
     @navigation = Navigation.find(params[:navigation_id])
