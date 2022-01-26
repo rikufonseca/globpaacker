@@ -52,7 +52,7 @@ p2 = Place.new(name: "Opéra de Marseille",
               exterior: false,
               environment: ["windy", "rainy", "cloudy"],
               description: "It is a theater located in the district of the same name, not far from the Old Port. The first opera theater was created in Marseille in 1685 by the composer Pierre Gaultier who obtained permission from Lully to open such an establishment, in return for the payment of an excessive royalty which ruined it. It is said that Mademoiselle de Maupin (actress) performed there at the end of the 1680s.Marseille's municipal opera house is built on the remains of the Grand-Théâtre, which was destroyed by fire in 1919.")
-url2 = "https://res.cloudinary.com/drwz0yg18/image/upload/v1641831758/Marseille/Marseille%20new/Ope%CC%81ra-de-Marseille-e1544270641705_mpz1pg.jpg"
+url2 = "https://res.cloudinary.com/drwz0yg18/image/upload/Marseille/Marseille%20new/Ope%CC%81ra-de-Marseille-e1544270641705_mpz1pg.jpg"
 file = URI.open(url2)
 p2.photo.attach(io: file, filename: 'file.jpg', content_type: 'image/jpg')
 p3 = Place.new(name: "Palais du Pharo",
