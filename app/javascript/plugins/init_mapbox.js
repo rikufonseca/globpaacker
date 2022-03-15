@@ -24,7 +24,7 @@ const initMapbox = () => {
       const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/light-v10',
-        center: [position.coords.longitude, position.coords.latitude],
+        center: [5.37639, 43.29667],
         zoom: 14
       });
 
