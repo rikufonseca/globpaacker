@@ -12,4 +12,6 @@ class Navigation < ApplicationRecord
   # validates :time_deadline, presence: true
   # validates :date, presence: true
   # validates :ending_address, presence: true
+
+  
 end

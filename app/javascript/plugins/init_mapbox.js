@@ -138,7 +138,7 @@ const initMapbox = () => {
         });
       }
       // READ DATA COMING FROM BACKEND
-      const navStartingCoords = [position.coords.longitude, position.coords.latitude];
+      const navStartingCoords = [ 5.37708, 43.294253];
       const navEndingCoords = [
         JSON.parse(mapElement.dataset.nav)[1]?.lng,
         JSON.parse(mapElement.dataset.nav)[1]?.lat
