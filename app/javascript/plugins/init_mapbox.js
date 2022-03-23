@@ -28,6 +28,9 @@ const initMapbox = () => {
         zoom: 14
       });
 
+      map.scrollZoom.disable();
+
+
       async function getAndDisplayRoute(start, end, steps = []) {
         // makes a directions request using walking profile
         let coordsString;
@@ -138,7 +141,7 @@ const initMapbox = () => {
         });
       }
       // READ DATA COMING FROM BACKEND
-      const navStartingCoords = [ 5.37708, 43.294253];
+      const navStartingCoords = [ 5.366564, 43.292328];
       const navEndingCoords = [
         JSON.parse(mapElement.dataset.nav)[1]?.lng,
         JSON.parse(mapElement.dataset.nav)[1]?.lat

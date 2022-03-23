@@ -13,5 +13,5 @@ class Navigation < ApplicationRecord
   # validates :date, presence: true
   # validates :ending_address, presence: true
 
-  
+  ENDING_ADDRESS = ["Quai du Maroc, 13002 Marseille, France", "15 Rue Honnorat, 13003 Marseille, France", "Gare Saint Charles, 13001 Marseille, France"]
 end
